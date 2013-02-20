@@ -1,4 +1,9 @@
-Source
-======
+/**
+    20-20-2013
+    Sanino Alessandro - Create
+**/
 
-Questa cartella contiene il codice di avvio
+int main (int argc, char* argv[]) {
+    return (0);
+}
+    
