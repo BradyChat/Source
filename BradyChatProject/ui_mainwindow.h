@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Tue Feb 26 16:49:29 2013
+** Created: Fri Mar 1 15:43:39 2013
 **      by: Qt User Interface Compiler version 4.6.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -33,8 +33,8 @@ public:
     QLabel *label;
     QLabel *label_2;
     QLabel *label_3;
-    QLineEdit *lineEdit;
-    QLineEdit *lineEdit_2;
+    QLineEdit *txtUsername;
+    QLineEdit *txtPassword;
     QPushButton *btnAccedi;
     QPushButton *btnIscriviti;
     QLabel *label_4;
@@ -63,12 +63,12 @@ public:
         label_3 = new QLabel(centralWidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(80, 120, 62, 17));
-        lineEdit = new QLineEdit(centralWidget);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setGeometry(QRect(150, 80, 113, 27));
-        lineEdit_2 = new QLineEdit(centralWidget);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
-        lineEdit_2->setGeometry(QRect(150, 110, 113, 27));
+        txtUsername = new QLineEdit(centralWidget);
+        txtUsername->setObjectName(QString::fromUtf8("txtUsername"));
+        txtUsername->setGeometry(QRect(150, 80, 113, 27));
+        txtPassword = new QLineEdit(centralWidget);
+        txtPassword->setObjectName(QString::fromUtf8("txtPassword"));
+        txtPassword->setGeometry(QRect(150, 110, 113, 27));
         btnAccedi = new QPushButton(centralWidget);
         btnAccedi->setObjectName(QString::fromUtf8("btnAccedi"));
         btnAccedi->setGeometry(QRect(150, 170, 111, 27));

@@ -31,6 +31,8 @@ void MainWindow::on_btnAccedi_clicked()
 {
     Chat* w;
     w = new Chat();
+    w->nomeUtente(this->ui->txtUsername->text());
+    w->chatRoom(this->ui->txtChatRoom->text());
     w->show();
     this->close();
 }

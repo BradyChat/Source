@@ -13,3 +13,4 @@ HEADERS += mainwindow.h \
 FORMS += mainwindow.ui \
     nuovoutente.ui \
     chat.ui
+QT += network

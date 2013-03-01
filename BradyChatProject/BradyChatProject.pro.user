@@ -60,6 +60,8 @@
    <value key="ToolChain" type="int">0</value>
    <value key="addQDumper" type=""></value>
    <value key="buildConfiguration" type="int">2</value>
+   <value key="buildDirectory" type="QString"></value>
+   <value key="useShadowBuild" type="bool">false</value>
   </valuemap>
  </data>
  <data>
@@ -67,6 +69,7 @@
   <valuemap type="QVariantMap">
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Release</value>
    <value key="QtVersionId" type="int">0</value>
+   <value key="ToolChain" type="int">0</value>
    <value key="addQDumper" type=""></value>
    <value key="buildConfiguration" type="int">0</value>
   </valuemap>
@@ -76,7 +79,7 @@
   <valuemap type="QVariantMap">
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList">
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-xiFuaeWDuN,guid=d32635dae66b57ac5a6e8da9512cbfb3</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-ph44Ktx0le,guid=79f3d5947e253195d72788b85130b994</value>
     <value type="QString">DEFAULTS_PATH=/usr/share/gconf/gnome.default.path</value>
     <value type="QString">DESKTOP_SESSION=gnome</value>
     <value type="QString">DISPLAY=:0.0</value>
@@ -84,11 +87,12 @@
     <value type="QString">GDM_KEYBOARD_LAYOUT=it</value>
     <value type="QString">GDM_LANG=it_IT.utf8</value>
     <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
-    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-elYYu7</value>
-    <value type="QString">GNOME_KEYRING_PID=1143</value>
+    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-kM1mGM</value>
+    <value type="QString">GNOME_KEYRING_PID=1128</value>
     <value type="QString">GTK_MODULES=canberra-gtk-module</value>
     <value type="QString">HOME=/home/bonigames</value>
     <value type="QString">LANG=it_IT.utf8</value>
+    <value type="QString">LANGUAGE=</value>
     <value type="QString">LD_LIBRARY_PATH=/usr/lib/qtcreator</value>
     <value type="QString">LOGNAME=bonigames</value>
     <value type="QString">MANDATORY_PATH=/usr/share/gconf/gnome.mandatory.path</value>
@@ -96,17 +100,17 @@
     <value type="QString">PATH=/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
     <value type="QString">PWD=/home/bonigames</value>
     <value type="QString">QTDIR=/usr/share/qt4</value>
-    <value type="QString">SESSION_MANAGER=local/bonigames-laptop:@/tmp/.ICE-unix/1161,unix/bonigames-laptop:/tmp/.ICE-unix/1161</value>
+    <value type="QString">SESSION_MANAGER=local/bonigames-laptop:@/tmp/.ICE-unix/1146,unix/bonigames-laptop:/tmp/.ICE-unix/1146</value>
     <value type="QString">SHELL=/bin/bash</value>
     <value type="QString">SPEECHD_PORT=7560</value>
-    <value type="QString">SSH_AGENT_PID=1217</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-elYYu7/ssh</value>
+    <value type="QString">SSH_AGENT_PID=1202</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-kM1mGM/ssh</value>
     <value type="QString">USER=bonigames</value>
     <value type="QString">USERNAME=bonigames</value>
-    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-bonigames-5YXIhX/database</value>
+    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-bonigames-P1bflP/database</value>
     <value type="QString">XDG_CONFIG_DIRS=/etc/xdg/xdg-gnome:/etc/xdg</value>
     <value type="QString">XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share/:/usr/share/</value>
-    <value type="QString">XDG_SESSION_COOKIE=760d58183b922c3cf015739f5129e8c9-1361887155.905077-196507314</value>
+    <value type="QString">XDG_SESSION_COOKIE=760d58183b922c3cf015739f5129e8c9-1362147732.624337-309836546</value>
    </valuelist>
    <valuelist key="abstractProcess.arguments" type="QVariantList">
     <value type="QString">/home/bonigames/Scrivania/BradyChatProject/BradyChatProject.pro</value>
@@ -125,7 +129,7 @@
   <valuemap type="QVariantMap">
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList">
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-xiFuaeWDuN,guid=d32635dae66b57ac5a6e8da9512cbfb3</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-ph44Ktx0le,guid=79f3d5947e253195d72788b85130b994</value>
     <value type="QString">DEFAULTS_PATH=/usr/share/gconf/gnome.default.path</value>
     <value type="QString">DESKTOP_SESSION=gnome</value>
     <value type="QString">DISPLAY=:0.0</value>
@@ -133,11 +137,12 @@
     <value type="QString">GDM_KEYBOARD_LAYOUT=it</value>
     <value type="QString">GDM_LANG=it_IT.utf8</value>
     <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
-    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-elYYu7</value>
-    <value type="QString">GNOME_KEYRING_PID=1143</value>
+    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-kM1mGM</value>
+    <value type="QString">GNOME_KEYRING_PID=1128</value>
     <value type="QString">GTK_MODULES=canberra-gtk-module</value>
     <value type="QString">HOME=/home/bonigames</value>
     <value type="QString">LANG=it_IT.utf8</value>
+    <value type="QString">LANGUAGE=</value>
     <value type="QString">LD_LIBRARY_PATH=/usr/lib/qtcreator</value>
     <value type="QString">LOGNAME=bonigames</value>
     <value type="QString">MANDATORY_PATH=/usr/share/gconf/gnome.mandatory.path</value>
@@ -145,17 +150,17 @@
     <value type="QString">PATH=/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
     <value type="QString">PWD=/home/bonigames</value>
     <value type="QString">QTDIR=/usr/share/qt4</value>
-    <value type="QString">SESSION_MANAGER=local/bonigames-laptop:@/tmp/.ICE-unix/1161,unix/bonigames-laptop:/tmp/.ICE-unix/1161</value>
+    <value type="QString">SESSION_MANAGER=local/bonigames-laptop:@/tmp/.ICE-unix/1146,unix/bonigames-laptop:/tmp/.ICE-unix/1146</value>
     <value type="QString">SHELL=/bin/bash</value>
     <value type="QString">SPEECHD_PORT=7560</value>
-    <value type="QString">SSH_AGENT_PID=1217</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-elYYu7/ssh</value>
+    <value type="QString">SSH_AGENT_PID=1202</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-kM1mGM/ssh</value>
     <value type="QString">USER=bonigames</value>
     <value type="QString">USERNAME=bonigames</value>
-    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-bonigames-5YXIhX/database</value>
+    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-bonigames-P1bflP/database</value>
     <value type="QString">XDG_CONFIG_DIRS=/etc/xdg/xdg-gnome:/etc/xdg</value>
     <value type="QString">XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share/:/usr/share/</value>
-    <value type="QString">XDG_SESSION_COOKIE=760d58183b922c3cf015739f5129e8c9-1361887155.905077-196507314</value>
+    <value type="QString">XDG_SESSION_COOKIE=760d58183b922c3cf015739f5129e8c9-1362147732.624337-309836546</value>
    </valuelist>
    <value key="abstractProcess.IgnoreReturnValue" type="bool">false</value>
    <valuelist key="abstractProcess.arguments" type="QVariantList">
@@ -170,6 +175,48 @@
   <variable>buildconfiguration-Debug-cleanstep0</variable>
   <valuemap type="QVariantMap">
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
+   <valuelist key="abstractProcess.Environment" type="QVariantList">
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-ph44Ktx0le,guid=79f3d5947e253195d72788b85130b994</value>
+    <value type="QString">DEFAULTS_PATH=/usr/share/gconf/gnome.default.path</value>
+    <value type="QString">DESKTOP_SESSION=gnome</value>
+    <value type="QString">DISPLAY=:0.0</value>
+    <value type="QString">GDMSESSION=gnome</value>
+    <value type="QString">GDM_KEYBOARD_LAYOUT=it</value>
+    <value type="QString">GDM_LANG=it_IT.utf8</value>
+    <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
+    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-kM1mGM</value>
+    <value type="QString">GNOME_KEYRING_PID=1128</value>
+    <value type="QString">GTK_MODULES=canberra-gtk-module</value>
+    <value type="QString">HOME=/home/bonigames</value>
+    <value type="QString">LANG=it_IT.utf8</value>
+    <value type="QString">LANGUAGE=</value>
+    <value type="QString">LD_LIBRARY_PATH=/usr/lib/qtcreator</value>
+    <value type="QString">LOGNAME=bonigames</value>
+    <value type="QString">MANDATORY_PATH=/usr/share/gconf/gnome.mandatory.path</value>
+    <value type="QString">ORBIT_SOCKETDIR=/tmp/orbit-bonigames</value>
+    <value type="QString">PATH=/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
+    <value type="QString">PWD=/home/bonigames</value>
+    <value type="QString">QTDIR=/usr/share/qt4</value>
+    <value type="QString">SESSION_MANAGER=local/bonigames-laptop:@/tmp/.ICE-unix/1146,unix/bonigames-laptop:/tmp/.ICE-unix/1146</value>
+    <value type="QString">SHELL=/bin/bash</value>
+    <value type="QString">SPEECHD_PORT=7560</value>
+    <value type="QString">SSH_AGENT_PID=1202</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-kM1mGM/ssh</value>
+    <value type="QString">USER=bonigames</value>
+    <value type="QString">USERNAME=bonigames</value>
+    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-bonigames-P1bflP/database</value>
+    <value type="QString">XDG_CONFIG_DIRS=/etc/xdg/xdg-gnome:/etc/xdg</value>
+    <value type="QString">XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share/:/usr/share/</value>
+    <value type="QString">XDG_SESSION_COOKIE=760d58183b922c3cf015739f5129e8c9-1362147732.624337-309836546</value>
+   </valuelist>
+   <value key="abstractProcess.IgnoreReturnValue" type="bool">true</value>
+   <valuelist key="abstractProcess.arguments" type="QVariantList">
+    <value type="QString">clean</value>
+    <value type="QString">-w</value>
+   </valuelist>
+   <value key="abstractProcess.command" type="QString">/usr/bin/make</value>
+   <value key="abstractProcess.enabled" type="bool">true</value>
+   <value key="abstractProcess.workingDirectory" type="QString">/home/bonigames/Scrivania/BradyChatProject</value>
    <value key="cleanConfig" type="bool">true</value>
    <valuelist key="makeargs" type="QVariantList">
     <value type="QString">clean</value>
@@ -192,6 +239,10 @@
   <variable>buildconfiguration-Release-cleanstep0</variable>
   <valuemap type="QVariantMap">
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Release</value>
+   <value key="cleanConfig" type="bool">true</value>
+   <valuelist key="makeargs" type="QVariantList">
+    <value type="QString">clean</value>
+   </valuelist>
   </valuemap>
  </data>
  <data>
