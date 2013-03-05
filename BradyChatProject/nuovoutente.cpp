@@ -28,16 +28,14 @@ void nuovoUtente::changeEvent(QEvent *e)
 
 void nuovoUtente::on_btnRitorna_clicked()
 {
-    MainWindow* mainw;
-    mainw = new MainWindow();
+    MainWindow* mainw = new MainWindow();
     mainw->show();
     this->close();
 }
 
 void nuovoUtente::on_btnIscriviti_clicked()
 {
-    MainWindow* mainw;
-    mainw = new MainWindow();
+    MainWindow* mainw = new MainWindow();
     mainw->show();
     this->close();
 }

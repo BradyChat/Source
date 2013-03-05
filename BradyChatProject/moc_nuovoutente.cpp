@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'nuovoutente.h'
 **
-** Created: Fri Mar 1 15:49:12 2013
+** Created: Tue Mar 5 18:09:25 2013
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.6.2)
 **
 ** WARNING! All changes made in this file will be lost!

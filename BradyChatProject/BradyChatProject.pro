@@ -9,8 +9,16 @@ SOURCES += main.cpp \
     chat.cpp
 HEADERS += mainwindow.h \
     nuovoutente.h \
-    chat.h
+    chat.h \
+    Include/str.h \
+    Include/SQLiteManager.hpp \
+    Include/sqlite3.h \
+    Include/SocketTCP.hpp \
+    Include/Server.hpp \
+    Include/Lista.hpp \
+    Include/Client.hpp \
+    Include/ChatAgent.hpp \
+    Include/Address.hpp
 FORMS += mainwindow.ui \
     nuovoutente.ui \
     chat.ui
-QT += network

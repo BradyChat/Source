@@ -1,19 +1,21 @@
 #include "chat.h"
 #include "ui_chat.h"
 #include "mainwindow.h"
-#include <qtcpsocket.h>
+#include "Include/Client.hpp"
+
 
 QString _nome;
 QString _chatroom;
-QTcpSocket* _socket;
+Client* _client;
 
 Chat::Chat(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Chat)
 {
     ui->setupUi(this);
-    _socket = new QTcpSocket(this);
-    connect(_socket, SIGNAL(leggi()), this, SLOT(leggi()));
+    _client = new Client("127.0.0.1",9001,"0.0.0.0",9000);
+    QObject* sender;
+    connect(sender, SIGNAL(leggi()), this, SLOT(leggi()));
 }
 
 Chat::~Chat()
@@ -53,19 +55,22 @@ void Chat::on_btnRitorna_clicked()
 void Chat::on_btnInvia_clicked()
 {
   QString msg;
+  QByteArray ba;
+  char* msgDaInviare;
   msg = this->ui->txtMessage->text();
   this->ui->txtChatRoom->appendPlainText(_nome + ": " + msg);
-  _socket->write(QString(_nome + ": " + msg + "\n").trimmed().toUtf8());
+  ba = msg.toLatin1();
+  msgDaInviare = ba.data();
+  _client->Invia(msgDaInviare);
   this->ui->txtMessage->clear();
   this->ui->txtMessage->setFocus();
-  //InviaMessaggio(chatroom, _nome + ": " + msg);
 }
 
 void Chat::leggi()
 {
-    while(_socket->canReadLine())
+    while(_client->canReadLine())
     {
-        QString msg = QString::fromUtf8(_socket->readLine()).trimmed();
+        QString msg = QString::fromUtf8(_client->Ricevi());
         this->ui->txtChatRoom->appendPlainText(msg);
     }
 }
