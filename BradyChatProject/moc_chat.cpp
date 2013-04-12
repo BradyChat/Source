@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'chat.h'
 **
-** Created: Tue Mar 5 18:09:25 2013
+** Created: Fri Apr 12 18:23:57 2013
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.6.2)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_Chat[] = {
        4,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   14, // methods
+       3,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -32,12 +32,15 @@ static const uint qt_meta_data_Chat[] = {
 
  // slots: signature, parameters, type, tag, flags
        6,    5,    5,    5, 0x08,
+      31,    5,    5,    5, 0x08,
+      53,    5,    5,    5, 0x08,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_Chat[] = {
-    "Chat\0\0on_btnRitorna_clicked()\0"
+    "Chat\0\0on_btnAggiorna_clicked()\0"
+    "on_btnInvia_clicked()\0on_btnRitorna_clicked()\0"
 };
 
 const QMetaObject Chat::staticMetaObject = {
@@ -69,10 +72,12 @@ int Chat::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: on_btnRitorna_clicked(); break;
+        case 0: on_btnAggiorna_clicked(); break;
+        case 1: on_btnInvia_clicked(); break;
+        case 2: on_btnRitorna_clicked(); break;
         default: ;
         }
-        _id -= 1;
+        _id -= 3;
     }
     return _id;
 }

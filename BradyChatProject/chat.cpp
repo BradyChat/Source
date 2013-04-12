@@ -1,21 +1,39 @@
+#include <qtimer.h>
+#include <QTcpSocket>
+#include <QHostAddress>
+#include <QAbstractSocket>
+#include <QWidget>
+#include <QBuffer>
+#include <string.h>
 #include "chat.h"
 #include "ui_chat.h"
 #include "mainwindow.h"
-#include "Include/Client.hpp"
 
 
 QString _nome;
 QString _chatroom;
-Client* _client;
+//Client* _client;
+QTcpSocket* sock;
+QBuffer* buffer;
 
 Chat::Chat(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Chat)
 {
     ui->setupUi(this);
-    _client = new Client("127.0.0.1",9001,"0.0.0.0",9000);
-    QObject* sender;
-    connect(sender, SIGNAL(leggi()), this, SLOT(leggi()));
+    sock = new QTcpSocket(this);
+    buffer = new QBuffer(this);
+    buffer->open(QIODevice::ReadWrite);
+
+    if (sock->state() == QAbstractSocket::UnconnectedState)
+    {//Mi collego al server.
+                sock->connectToHost("0.0.0.0",9003);
+    }
+    else
+    {
+            sock->disconnectFromHost();
+    }
+    connect(sock, SIGNAL(readyRead()),this, SLOT(on_btnAggiorna_clicked()));
 }
 
 Chat::~Chat()
@@ -47,30 +65,36 @@ void Chat::chatRoom(QString chatroom)
 
 void Chat::on_btnRitorna_clicked()
 {
+    sock->disconnectFromHost();
     MainWindow* mainw = new MainWindow();
     mainw->show();
     this->close();
 }
 
 void Chat::on_btnInvia_clicked()
-{
-  QString msg;
-  QByteArray ba;
-  char* msgDaInviare;
-  msg = this->ui->txtMessage->text();
-  this->ui->txtChatRoom->appendPlainText(_nome + ": " + msg);
-  ba = msg.toLatin1();
-  msgDaInviare = ba.data();
-  _client->Invia(msgDaInviare);
+{//@chatroom@ viene inviato in modo che ogni ricevente capisca se il messaggio è rivolto a lui.
+  sock->write("@" + _chatroom.toLatin1() + "@" + _nome.toLatin1()+": "+ this->ui->txtMessage->text().toLatin1() + "\n");
   this->ui->txtMessage->clear();
-  this->ui->txtMessage->setFocus();
 }
 
 void Chat::leggi()
 {
-    while(_client->canReadLine())
-    {
-        QString msg = QString::fromUtf8(_client->Ricevi());
-        this->ui->txtChatRoom->appendPlainText(msg);
-    }
+    qint64 bytes = buffer->write(sock->readAll()); //Per leggere i messaggi dal server.
+    buffer->seek(buffer->pos() - bytes);
+    while (buffer->canReadLine())
+            {
+                    QString line = buffer->readLine();
+                    QString chatroomName = "@" + _chatroom;
+                    QString messaggioPerMe = line.mid(line.indexOf('@',0),line.indexOf('@',1));
+                    if(chatroomName.compare(messaggioPerMe)==0)
+                    {
+                        line.remove(chatroomName + "@");
+                        this->ui->txtChatRoom->appendPlainText(line);
+                    }
+            }
+}
+
+void Chat::on_btnAggiorna_clicked()
+{
+    leggi();
 }

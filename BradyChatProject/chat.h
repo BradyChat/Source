@@ -23,6 +23,7 @@ private:
     Ui::Chat *ui;
 
 private slots:
+    void on_btnAggiorna_clicked();
     void on_btnInvia_clicked();
     void on_btnRitorna_clicked();
 };

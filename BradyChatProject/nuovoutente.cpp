@@ -1,3 +1,4 @@
+#include <QtSql/QtSql>
 #include "nuovoutente.h"
 #include "ui_nuovoutente.h"
 #include "mainwindow.h"
@@ -35,6 +36,9 @@ void nuovoUtente::on_btnRitorna_clicked()
 
 void nuovoUtente::on_btnIscriviti_clicked()
 {
+    QSqlQuery s;
+    s.prepare("INSERT INTO Utenti VALUES ('" + this->ui->txtUserNameNew->text() + "', '" + this->ui->txtPasswordNew->text() + "')");
+    s.exec();
     MainWindow* mainw = new MainWindow();
     mainw->show();
     this->close();

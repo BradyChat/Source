@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'chat.ui'
 **
-** Created: Tue Mar 5 18:09:21 2013
+** Created: Fri Apr 12 18:23:51 2013
 **      by: Qt User Interface Compiler version 4.6.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -33,6 +33,7 @@ public:
     QLineEdit *txtMessage;
     QPushButton *btnInvia;
     QPushButton *btnRitorna;
+    QPushButton *btnAggiorna;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -55,6 +56,9 @@ public:
         btnRitorna = new QPushButton(centralwidget);
         btnRitorna->setObjectName(QString::fromUtf8("btnRitorna"));
         btnRitorna->setGeometry(QRect(0, 520, 111, 27));
+        btnAggiorna = new QPushButton(centralwidget);
+        btnAggiorna->setObjectName(QString::fromUtf8("btnAggiorna"));
+        btnAggiorna->setGeometry(QRect(590, 520, 93, 27));
         Chat->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Chat);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -74,6 +78,7 @@ public:
         Chat->setWindowTitle(QApplication::translate("Chat", "Chat", 0, QApplication::UnicodeUTF8));
         btnInvia->setText(QApplication::translate("Chat", "Invia", 0, QApplication::UnicodeUTF8));
         btnRitorna->setText(QApplication::translate("Chat", "Cambia Account", 0, QApplication::UnicodeUTF8));
+        btnAggiorna->setText(QApplication::translate("Chat", "Aggiorna", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };
