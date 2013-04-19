@@ -9,4 +9,5 @@ TEMPLATE = app
 SOURCES += main.cpp \
     Server.cpp
 HEADERS += Server.h
-QT += network
+QT += network \
+	sql

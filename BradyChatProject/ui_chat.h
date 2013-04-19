@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'chat.ui'
 **
-** Created: Fri Apr 12 18:23:51 2013
+** Created: Fri Apr 19 17:32:23 2013
 **      by: Qt User Interface Compiler version 4.6.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -46,6 +46,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         txtChatRoom = new QPlainTextEdit(centralwidget);
         txtChatRoom->setObjectName(QString::fromUtf8("txtChatRoom"));
+        txtChatRoom->setEnabled(false);
         txtChatRoom->setGeometry(QRect(3, 3, 791, 481));
         txtMessage = new QLineEdit(centralwidget);
         txtMessage->setObjectName(QString::fromUtf8("txtMessage"));

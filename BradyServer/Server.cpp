@@ -1,6 +1,9 @@
 #include <QBuffer>
 #include <QTcpSocket>
 #include "Server.h"
+#include <QtSql/QtSql>
+
+QSqlDatabase db;
 
 Server::Server(QObject* parent) : QTcpServer(parent)
 {
@@ -57,9 +60,61 @@ void Server::riceviMessaggio()
         while (buffer->canReadLine()) //Leggo fino a quando sono presenti linee di testo.
         {
                 line = buffer->readLine();
+                if(line.startsWith('#')) //Richiesta di autenticazione.
+                {
+                    db =  QSqlDatabase::addDatabase("QSQLITE");
+                    db.setDatabaseName("./users.sqldb");
+                    if (!db.open()) {
+                        socket->write("#false");
+                                   }
+                    QSqlQuery s;
+                    QString nome;
+                    QString password;
+                    QList<QByteArray> nomepassword;
+
+                    nomepassword = line.split('/');
+                    nome = nomepassword[1];
+                    password = nomepassword[2];
+                    password = password.remove("\n");
+
+                    s.prepare("SELECT Username FROM Utenti WHERE Username = '" + nome + "' AND Password = '" + password +"'");
+                    s.exec();
+                    s.next();
+                    QString username = s.value(0).toString();
+                            if(username != "")
+                            {
+                                socket->write("#true\n");
+                            }
+                            else
+                            {
+                                socket->write("#false\n");
+                            }
+                    db.close();
+                }
+                else if(line.startsWith('!')) //Richiesta di iscrizione.
+                {
+
+                    QString nome;
+                    QString password;
+                    QList<QByteArray> nomepassword = line.split('/');
+
+                    db =  QSqlDatabase::addDatabase("QSQLITE");
+                    db.setDatabaseName("./users.sqldb");
+                    db.open();
+                     QSqlQuery s;
+
+                    nome = nomepassword[1];
+                    password = nomepassword[2];
+                    password = password.remove("\n");
+
+                    s.prepare("INSERT INTO Utenti VALUES ('" + nome + "', '" + password + "')");
+                    s.exec();
+                    db.close();
+                }
+                else
                 foreach (QTcpSocket* connection, connections)
                 {
-                        connection->write(line); //Invio il testo ricevuto a un'altra connessione.
+                     connection->write(line); //Invio il testo ricevuto a un'altra connessione.
                 }
         }
 }

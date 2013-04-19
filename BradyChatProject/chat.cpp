@@ -8,6 +8,7 @@
 #include "chat.h"
 #include "ui_chat.h"
 #include "mainwindow.h"
+#include <stdio.h>
 
 
 QString _nome;
@@ -25,20 +26,29 @@ Chat::Chat(QWidget *parent) :
     buffer = new QBuffer(this);
     buffer->open(QIODevice::ReadWrite);
 
-    if (sock->state() == QAbstractSocket::UnconnectedState)
-    {//Mi collego al server.
-                sock->connectToHost("0.0.0.0",9003);
+    char ip[15];
+    FILE* fp;
+
+    if (sock->state() == QAbstractSocket::UnconnectedState)//Mi collego al server.
+    {
+
+                fp = fopen("config.cfg","r");
+                fscanf(fp,"%s",ip);
+                sock->connectToHost(ip,9003);
     }
     else
     {
             sock->disconnectFromHost();
     }
     connect(sock, SIGNAL(readyRead()),this, SLOT(on_btnAggiorna_clicked()));
+    connect(this->ui->txtMessage,SIGNAL(returnPressed()), SLOT(on_btnInvia_clicked()));
 }
 
 Chat::~Chat()
 {
     delete ui;
+    delete sock;
+    delete buffer;
 }
 
 void Chat::changeEvent(QEvent *e)
@@ -71,8 +81,8 @@ void Chat::on_btnRitorna_clicked()
     this->close();
 }
 
-void Chat::on_btnInvia_clicked()
-{//@chatroom@ viene inviato in modo che ogni ricevente capisca se il messaggio è rivolto a lui.
+void Chat::on_btnInvia_clicked() //@chatroom@ viene inviato in modo che ogni ricevente capisca se il messaggio è rivolto a lui.
+{
   sock->write("@" + _chatroom.toLatin1() + "@" + _nome.toLatin1()+": "+ this->ui->txtMessage->text().toLatin1() + "\n");
   this->ui->txtMessage->clear();
 }

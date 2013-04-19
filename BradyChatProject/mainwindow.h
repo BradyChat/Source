@@ -22,6 +22,7 @@ private:
 private slots:
     void on_btnIscriviti_clicked();
     void on_btnAccedi_clicked();
+    void ricevi();
 };
 
 #endif // MAINWINDOW_H
